@@ -1,5 +1,5 @@
-// import React, { useState, useEffect } from 'react';
-// import Header from './Header';
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
 // export default function Contactme({mode, togglemode}) {
 //   // const [data, setData] = useState({
 //   //   name: "",
@@ -84,18 +84,11 @@
 // }
 
 
-import React, { useState } from 'react';
-import Header from './Header';
 
-export default function Contactme({ mode, togglemode }) {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+export default function Contactme({mode, togglemode}) {
+  const [data, setData] = useState({ name: '', email: '', message: '' });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleStore = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -103,7 +96,6 @@ export default function Contactme({ mode, togglemode }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -113,21 +105,20 @@ export default function Contactme({ mode, togglemode }) {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setErrorMessage(errorData.message || "Something went wrong. Please try again.");
-        setSuccessMessage("");
+        setErrorMessage(errorData.message || 'Something went wrong. Please try again.');
+        setSuccessMessage('');
         return;
       }
 
-      setSuccessMessage("Thanks for contacting me!");
-      setErrorMessage("");
+      setSuccessMessage('Thanks for contacting me!');
+      setErrorMessage('');
       setData({ name: '', email: '', message: '' });
 
-      setTimeout(() => {
-        setSuccessMessage("");
-      }, 3000);
+      setTimeout(() => setSuccessMessage(''), 3000);
     } catch (error) {
-      setSuccessMessage("Thanks for contacting me!");    }
-      setErrorMessage("");
+      setErrorMessage('Error submitting the form. Please try again.');
+      setSuccessMessage('');
+    }
   };
 
   return (
