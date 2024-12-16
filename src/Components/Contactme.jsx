@@ -14,7 +14,8 @@ export default function Contactme({mode, togglemode}) {
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
-    console.log(data);
+    const data2 = JSON.stringify(data);
+    console.log(data2);
     setData({name: '', email: '', message: ''});
     setText("Thanks for contacting me");
     setTimeout(()=>{
