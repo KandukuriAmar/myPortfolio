@@ -178,7 +178,6 @@
 //   );
 // }
 
-
 import React, { useState } from 'react';
 import Header from './Header';
 
@@ -189,8 +188,8 @@ export default function Contactme({ mode, togglemode }) {
     message: ""
   });
 
-  const [text, setText] = useState("");
-  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleStore = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -203,25 +202,26 @@ export default function Contactme({ mode, togglemode }) {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        setText("Thanks for contacting me!");
+        setErrorMessage(errorData.message || "Something went wrong. Please try again.");
+        setSuccessMessage("");
         return;
       }
 
-      const result = await response.json();
-      setText("Thanks for contacting me!");
-      setError("");
+      setSuccessMessage("Thanks for contacting me!");
+      setErrorMessage("");
       setData({ name: '', email: '', message: '' });
 
       setTimeout(() => {
-        setText("");
+        setSuccessMessage("");
       }, 3000);
-    } catch (err) {
-      setText("Thanks for contacting me!");
+    } catch (error) {
+      setErrorMessage("An error occurred while submitting the form. Please try again.");
+      setSuccessMessage("");
     }
   };
 
@@ -237,15 +237,15 @@ export default function Contactme({ mode, togglemode }) {
             Contact Me
           </div>
 
-          {error && (
+          {errorMessage && (
             <p className="text-red-600 text-center mb-4">
-              {error}
+              {errorMessage}
             </p>
           )}
 
-          {text && (
+          {successMessage && (
             <p className="text-green-600 text-center mb-4">
-              {text}
+              {successMessage}
             </p>
           )}
 
