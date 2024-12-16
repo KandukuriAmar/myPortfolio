@@ -13,7 +13,7 @@ export default function Contactme({mode, togglemode}) {
   const [text, setText] = useState("");
 
   const handleSubmit = async(e) =>{
-    e.preventDefault();
+    // e.preventDefault();
     // setData({name: '', email: '', message: ''});
     setText("Thanks for contacting me");
     setTimeout(()=>{
