@@ -82,29 +82,23 @@
 //     </>
 //   )
 // }
-
 import React, { useState } from 'react';
 import Header from './Header';
-export default function Contactme({ mode, togglemode }) {
-  // const [text, setText] = useState("");
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setText("Thanks for contacting me");
-  //   setTimeout(() => {
-  //     setText("");
-  //   }, 3000);
-  // };
+export default function Contactme({ mode, togglemode }) {
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setMessage("Thanks for contacting me!");
+    setTimeout(() => setMessage(""), 3000);
+  };
 
   return (
     <>
       <Header mode={mode} togglemode={togglemode} />
       <div className="flex justify-center items-center min-h-screen flex-row bg-zinc-800">
-        <form
-          // onSubmit={handleSubmit}
-          // method="POST"
-          className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
-        >
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <div className="mb-9 text-2xl text-black flex items-center justify-center">
             Contact Me
           </div>
@@ -141,8 +135,8 @@ export default function Contactme({ mode, togglemode }) {
               className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-md hover:bg-gray-600 cursor-pointer"
             />
           </div>
-          {/* <p className="text-xl text-slate-900 flex items-center justify-center py-2">{text}</p> */}
         </form>
+        {message && <p className="text-xl text-slate-900 flex items-center justify-center py-2">{message}</p>}
       </div>
     </>
   );
