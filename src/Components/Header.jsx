@@ -17,7 +17,7 @@ export default function Header({ mode, togglemode }) {
         <Link to='/'><img src={mode === 'dark' ? logo2 : logo} alt='logo' className={`h-9 w-14 rounded-sm cursor-pointer`} /></Link>
 
         <div className={`flex gap-3 items-center space-x-4 pl-14 ${mode === 'dark' ? 'text-white' : 'text-black'}`}>
-          <Link to='/' className='border-b-2 border-transparent hover:border-amber-300'>Home</Link>
+          <Link to='/' className='border-b-2 border-transparent hover:border-amber-300'>Homee</Link>
           <Link to='/about' className='border-b-2 border-transparent hover:border-amber-300'>About</Link>
           <Link to='/' className='border-b-2 border-transparent hover:border-amber-300'>Portfolio</Link>
           <Link to='/clients' className='border-b-2 border-transparent hover:border-amber-300'>Clients</Link>
