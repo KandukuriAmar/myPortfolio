@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Header from './Header';
+// import React, { useState, useEffect } from 'react';
+// import Header from './Header';
 // export default function Contactme({mode, togglemode}) {
 //   // const [data, setData] = useState({
 //   //   name: "",
@@ -83,66 +83,91 @@ import Header from './Header';
 //   )
 // }
 
+import React, { useState } from "react";
 
-export default function Contactme({ mode, togglemode }) {
-  const [text, setText] = useState("");
+export default function Contactme() {
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setText("Thanks for contacting me");
-    setTimeout(() => {
-      setText("");
-    }, 3000);
+    setMessage("Thanks for contacting me!");
+    setTimeout(() => setMessage(""), 3000);
   };
 
   return (
-    <>
-      <Header mode={mode} togglemode={togglemode} />
-      <div className="flex justify-center items-center min-h-screen flex-row bg-zinc-800">
-        <form
-          onSubmit={handleSubmit}
-          method="POST"
-          className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", backgroundColor: "#f0f0f0" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          backgroundColor: "#fff",
+          padding: "20px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+          width: "300px"
+        }}
+      >
+        <h2 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>Contact Me</h2>
+        <div style={{ marginBottom: "15px" }}>
+          <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Name:</label>
+          <input
+            type="text"
+            name="name"
+            required
+            style={{
+              width: "100%",
+              padding: "8px",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+          />
+        </div>
+        <div style={{ marginBottom: "15px" }}>
+          <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Email:</label>
+          <input
+            type="email"
+            name="email"
+            required
+            style={{
+              width: "100%",
+              padding: "8px",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+          />
+        </div>
+        <div style={{ marginBottom: "15px" }}>
+          <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Message:</label>
+          <textarea
+            name="message"
+            required
+            style={{
+              width: "100%",
+              padding: "8px",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              resize: "none",
+              height: "80px"
+            }}
+          />
+        </div>
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            backgroundColor: "#007BFF",
+            color: "#fff",
+            padding: "10px",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer"
+          }}
         >
-          <div className="mb-9 text-2xl text-black flex items-center justify-center">
-            Contact Me
-          </div>
-          <div className="mb-4">
-            <label className="block text-slate-900 font-semibold">Name:</label>
-            <input
-              name="name"
-              type="text"
-              required
-              className="w-full mt-1 p-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-slate-900 font-semibold">Email:</label>
-            <input
-              name="email"
-              type="email"
-              required
-              className="w-full mt-1 p-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-slate-700"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-slate-900 font-semibold">Message:</label>
-            <textarea
-              name="message"
-              required
-              className="w-full mt-1 p-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-slate-700"
-            />
-          </div>
-          <div>
-            <input
-              type="submit"
-              value="Submit"
-              className="w-full bg-zinc-700 text-white font-semibold py-2 rounded-md hover:bg-gray-600 cursor-pointer"
-            />
-          </div>
-          <p className="text-xl text-slate-900 flex items-center justify-center py-2">{text}</p>
-        </form>
-      </div>
-    </>
+          Submit
+        </button>
+        {message && (
+          <p style={{ marginTop: "15px", textAlign: "center", color: "green", fontWeight: "bold" }}>{message}</p>
+        )}
+      </form>
+    </div>
   );
 }
