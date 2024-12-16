@@ -28,13 +28,13 @@ export default function Header({ mode, togglemode }) {
             <img src={mode === 'dark' ? light : dark} className='h-9 w-9 bg-white rounded-full p-2' alt="mode" />
           </button>
           
-          <a 
-            href='/contactme' 
+          <Link 
+            to='/contactme' 
             className={`rounded-full p-4 flex items-center gap-2 ${mode === 'light' ? 'bg-black text-slate-100' : 'bg-white text-slate-800'} hover:rounded-full transition-transform transform hover:-translate-y-1 backdrop-blur-lg`}
           >
             <img src={mode === 'dark' ? contactmsg : messagedark} className='h-5 w-6' alt="contact" />
             Contact Me
-          </a>
+          </Link>
         </div>
       </nav>
     </div>
