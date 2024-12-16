@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 export default function Contactme({mode, togglemode}) {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  // const [data, setData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: ""
+  // });
 
-  const handleStore = (e) =>{
-    setData({...data, [e.target.name]: e.target.value});
-  }
+  // const handleStore = (e) =>{
+  //   setData({...data, [e.target.name]: e.target.value});
+  // }
   const [text, setText] = useState("");
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
-    setData({name: '', email: '', message: ''});
+    // setData({name: '', email: '', message: ''});
     setText("Thanks for contacting me");
     setTimeout(()=>{
       setText("");
@@ -37,8 +37,8 @@ export default function Contactme({mode, togglemode}) {
             <input 
               name="name" 
               type="text" 
-              value={data.name}
-              onChange={handleStore} 
+              // value={data.name}
+              // onChange={handleStore} 
               required
               className="w-full mt-1 p-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900" 
             />
@@ -49,8 +49,8 @@ export default function Contactme({mode, togglemode}) {
             <input 
               name="email" 
               type="email" 
-              value={data.email}
-              onChange={handleStore} 
+              // value={data.email}
+              // onChange={handleStore}
               required
               className="w-full mt-1 p-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-slate-700" 
             />
@@ -60,8 +60,8 @@ export default function Contactme({mode, togglemode}) {
             <label className="block text-slate-900 font-semibold">Message:</label>
             <textarea 
               name="message" 
-              value={data.message}
-              onChange={handleStore} 
+              // value={data.message}
+              // onChange={handleStore} 
               required
               className="w-full mt-1 p-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-slate-700" 
             />
