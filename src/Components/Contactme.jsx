@@ -56,29 +56,10 @@
 //   )
 // }
 
-import React from 'react';
-export default function Contactme() {
+export default function Contactme({mode, togglemode}) {
   return (
   <>
   <h1>Contactme</h1>
     </>
   );
 }
-
-
-
-// import React from 'react';
-// import Header from './Header';
-// import Contactme from './Contactme';
-
-// export default function Contactme({ mode, togglemode }) {
-//   return (
-//     <>
-//       <Header mode={mode} togglemode={togglemode} />
-//       <div>
-//         <h1>Contact Me</h1>
-//       </div>
-//     </>
-//   );
-// }
-
