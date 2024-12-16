@@ -104,32 +104,14 @@ export default function Contactme({ mode, togglemode }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit the form');
-      }
-      JSON.stringify(data)
-      const result = await response.json();
-
+    
       setText("Thanks for contacting me!");
       setData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setText("Thanks for contacting me!");
-      setData({ name: '', email: '', message: '' });
-    } finally {
+     
       setTimeout(() => {
         setText("");
       }, 3000);
-    }
+    
   };
 
   return (
