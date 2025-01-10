@@ -27,7 +27,8 @@ export default function About({mode, togglemode}) {
     'ReactJS',
     'NodeJS',
     'ExpressJS',
-    'MongoDB'
+    'MongoDB',
+    'SpringBoot'
   ];
 
   const imageMapping = {
