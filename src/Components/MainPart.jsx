@@ -29,7 +29,7 @@ export default function MainPart({mode, togglemode}) {
           /><br/>
         </h2>
         <br/><h1>I am a skilled in creating the web application that are user friendly</h1><br/>
-        <a className={`flex flex-wrap gap-2 items-center rounded-full ${mode === 'light'? 'bg-black text-slate-100' : 'bg-slate-100 text-slate-900'} w-36 h-14 hover:rounded-full transition-transform transform hover:-translate-y-1 backdrop-blur`} href="https://drive.google.com/file/d/1KXWKOtAoWEhhNreteZs7UBUXLlTa1Sod/view?usp=drive_link" target='_black'>
+        <a className={`flex flex-wrap gap-2 items-center rounded-full ${mode === 'light'? 'bg-black text-slate-100' : 'bg-slate-100 text-slate-900'} w-36 h-14 hover:rounded-full transition-transform transform hover:-translate-y-1 backdrop-blur`} href="https://drive.google.com/file/d/1zruZMhQqFUYt58YuVGbyy63NzZja2E4-/view?usp=drive_link" target='_black'>
           <img src={mode === 'light' ? darkresume : lightresume} className='h-11 w-11 p-3'/>Resume
         </a>
         <img src={pic} alt='baseimg' className='h-80 w-80 rounded-full absolute -z-10 object-cover right-11 top-14'/>
