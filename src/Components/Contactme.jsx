@@ -7,13 +7,26 @@ export default function Contactme({mode, togglemode}) {
     email: "",
     message: ""
   })
+  const [text, setText] = useState("");
 
   const setAllEmpty = () => {
+    if (!formData.name || !formData.email || !formData.message) {
+    setText("Please fill all fields.");
+    document.getElementById("btntext").style.color = "red";
+    setTimeout(() => setText(""), 2000);
+    return;
+  }
     setFormData({
       name: "",
       email: "",
       message: ""
     })
+
+    setText("Thanks for Submitting your feedback.")
+    document.getElementById("btntext").style.color = "green";
+    setTimeout(() => {
+      setText("");
+    }, 2000)
   }
 
   const handleOnchange = (e) => {
@@ -75,9 +88,11 @@ export default function Contactme({mode, togglemode}) {
               onClick = {setAllEmpty}
             />
           </div>
+          <br/>
+          <div><p id="btntext" className="pl-9">{text}</p></div>
         </div>
       </div>
-     </> 
+     </>
     </>
   )
 }
