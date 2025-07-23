@@ -17,7 +17,6 @@ export default function MainPart({mode, togglemode}) {
         <h1 className="text-6xl font-bold tracking-wide">
           I'm, <span className="text-amber-300">Amar Nadh</span>
         </h1>
-        {/* <h1 className='text-6xl tracking-wide pt-1'>Website Developer</h1><br/> */}
         <h2 className="text-6xl tracking-wide pt-1">
           {' '}
           <ReactTypingEffect

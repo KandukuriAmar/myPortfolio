@@ -20,7 +20,7 @@ export default function Header({ mode, togglemode }) {
           <Link to='/' className='border-b-2 border-transparent hover:border-amber-300'>Home</Link>
           <Link to='/about' className='border-b-2 border-transparent hover:border-amber-300'>About</Link>
           <Link to='/' className='border-b-2 border-transparent hover:border-amber-300'>Portfolio</Link>
-          <Link to='/clients' className='border-b-2 border-transparent hover:border-amber-300'>Clients</Link>
+          <Link to='/contacts' className='border-b-2 border-transparent hover:border-amber-300'>Contacts</Link>
         </div>
 
         <div className='flex gap-5'>

@@ -17,20 +17,20 @@ export default function About({mode, togglemode}) {
     'Aws Cloud Practitioner',
   ];
 
-  const languages = [
-    'C',
-    'C++',
-    'Python',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'ReactJS',
-    'NodeJS',
-    'ExpressJS',
-    'MongoDB',
-    'SpringBoot'
+  const fileNames = [
+    "c.jpg",
+    "cpp.jpg",
+    "python.jpg",
+    "html.jpg",
+    "css.jpg",
+    "js.jpg",
+    "react.jpg",
+    "node.jpg",
+    "express.jpg",
+    "spring.jpg",
+    "mongodb.jpg",
+    "sql.jpg"
   ];
-
   const imageMapping = {
     0: img1,
     1: img2,
@@ -52,24 +52,23 @@ export default function About({mode, togglemode}) {
         </div>
         <div className='max-w-full sm:w-[40rem] md:w-[50rem] lg:w-[66rem] px-4 sm:px-8'>
           <h2 className={`text-center ${mode === 'light' ? 'text-black' : 'text-slate-400'}  text-sm sm:text-base lg:text-lg`}>
-            Hello, I'm Kandukuri Amar Nadh and I'm currently pursuing B-Tech 3rd year at KL University of Technology in the CSE-Honors branch. I have good knowledge of web development and programming. I have developed many projects on MERN Stack and Python Full Stack. I am also a freelance web developer, and I am always looking for opportunities to improve my skills and share my knowledge with others.
+            Hello, I'm Kandukuri Amara Lingeswararao and I'm currently pursuing B-Tech 4th year at KL University of Technology in the CSE-Honors branch. I have good knowledge of web development and programming. I have developed unique projects on ReactJS, NodeJS, SpringBoot, and more. I am also a freelance web developer, and I am always looking for opportunities to improve my skills and share my knowledge with others.
           </h2>
         </div>
       </div>
 
       <div className="text-white p-6 flex flex-col items-start pt-32 pl-8 sm:pl-16 lg:pl-40">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 text-violet-400 cursor-pointer">Capabilities</h2>
-        <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-6 max-w-6xl gap-y-4 sm:gap-y-6 lg:gap-y-8 pt-8 sm:pt-10 lg:pt-11">
-          {languages.map((language, index) => (
-            <button
-              className={`flex items-center gap-2 sm:gap-3 px-4 sm:px-6 lg:px-9 py-2 sm:py-3 rounded-full font-semibold sm:font-bold text-sm sm:text-base lg:text-sm ${mode === 'dark' ? 'bg-white/10 text-orange-400' : 'bg-black text-gray-300'} shadow-inner hover:bg-slate-300 hover:text-black transition-transform transform hover:-translate-y-1 backdrop-blur`}
-              key={index}
-            >
-              <span>{language}</span>
-            </button>
+
+        <div className="flex flex-wrap gap-x-6 max-w-6xl gap-y-7 pt-8 sm:pt-10 lg:pt-11">
+          {fileNames.map((file, index) =>(
+            <div key={index} className='capabilities-item cursor-pointer hover: translate-y-1'>
+              <img src={`/${file}`} alt={file} className='capabilities-image h-24 w-24 rounded-sm' />
+            </div>
           ))}
         </div>
-      </div><br /><br /><br /><br /><br />
+      </div><br />
+      
 
       <div className="text-white p-6 flex flex-col items-start pt-1 sm:pl-[10rem] lg:pl-401">
         <h2 className="text-4xl font-semibold mb-2 text-violet-400 pt-11 cursor-pointer">Tech</h2>

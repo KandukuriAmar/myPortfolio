@@ -1,20 +1,21 @@
 import React from 'react';
 import Header from './Header';
 
-export default function Clients({mode, togglemode}) {
+export default function Contacts({mode, togglemode}) {
     const users = [
-        "govindha@gmail.com",
-        "ba@gmail.com",
-        "james@gmail.com",
-        "sandeep@gmail.com",
-        "sukuna@gmail.com",
-        "sundhar@gmail.com",
-        "mike@gmail.com",
-        "gojo@gmail.com",
-        "mikey@gmail.com",
-        "loki@gmail.com",
-        "nani@gmail.com",
-    ]
+    "arjun.patel@gmail.com",
+    "meena.rani@gmail.com",
+    "rahul.verma@gmail.com",
+    "deepak.sharma@gmail.com",
+    "sneha.kapoor@gmail.com",
+    "vignesh.krishna@gmail.com",
+    "anjali.singh@gmail.com",
+    "rohit.malhotra@gmail.com",
+    "kavya.nair@gmail.com",
+    "manish.yadav@gmail.com",
+    "priya.iyer@gmail.com",
+  ];
+
   return (
     <div>
         <Header mode={mode} togglemode={togglemode} />
