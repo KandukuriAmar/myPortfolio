@@ -62,7 +62,7 @@ export default function About({mode, togglemode}) {
 
         <div className="flex flex-wrap gap-x-6 max-w-6xl gap-y-7 pt-8 sm:pt-10 lg:pt-11">
           {fileNames.map((file, index) =>(
-            <div key={index} className='capabilities-item cursor-pointer hover: translate-y-1'>
+            <div key={index} className='capabilities-item cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out'>
               <img src={`/${file}`} alt={file} className='capabilities-image h-24 w-24 rounded-sm' />
             </div>
           ))}
