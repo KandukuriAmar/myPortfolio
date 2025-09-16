@@ -14,6 +14,7 @@ export default function Contacts({mode, togglemode}) {
     "kavya.nair@gmail.com",
     "manish.yadav@gmail.com",
     "priya.iyer@gmail.com",
+    "rabi@gmail.com"
   ];
 
   return (
